@@ -74,6 +74,8 @@ public class MainActivity extends AppCompatActivity {
             case R.id.action_search:
                 Toast.makeText(this, "Menu clicked", Toast.LENGTH_SHORT).show();
                 return true;
+            default:
+                Toast.makeText(this, "Nope", Toast.LENGTH_SHORT).show();
         }
         return super.onOptionsItemSelected(item);
     }
