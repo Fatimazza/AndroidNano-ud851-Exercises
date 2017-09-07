@@ -57,9 +57,15 @@
         android:layout_marginTop="8dp"
         android:text="Your search URL will show up here when You click Search"/>
 
-    <!--TODO (18) Add a ScrollView-->
-    <!--TODO (19) Set the width to match_parent and the height to wrap_content-->
-    <!--TODO (20) Set the top margin to 16dp-->
+    <!--COMPLETED (18) Add a ScrollView-->
+    <!--COMPLETED (19) Set the width to match_parent and the height to wrap_content-->
+    <!--COMPLETED (20) Set the top margin to 16dp-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp">
+
+    </ScrollView>
 
         <!--TODO (21) Within the ScrollView, add a TextView-->
         <!--TODO (22) Give the TextView an id of @+id/tv_github_search_results_json-->
