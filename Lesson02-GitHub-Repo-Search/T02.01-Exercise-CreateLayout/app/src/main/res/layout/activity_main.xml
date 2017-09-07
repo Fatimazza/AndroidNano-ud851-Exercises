@@ -18,8 +18,8 @@
 <!--COMPLETED (1) Change the ConstraintLayout to a LinearLayout-->
 <!--COMPLETED (2) Make the orientation vertical-->
 <!--COMPLETED (3) Give left, right, and top padding of 16dp-->
-<!--TODO (4) Remove the line that declares the id, we don't need it-->
-<!--TODO (5) Remove the xmlns:app declaration, we don't need that anymore-->
+<!--COMPLETED (4) Remove the line that declares the id, we don't need it-->
+<!--COMPLETED (5) Remove the xmlns:app declaration, we don't need that anymore-->
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -29,12 +29,8 @@
     android:paddingRight="16dp"
     android:paddingTop="16dp">
 
-    <!--TODO (6) Delete this TextView-->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"/>
-
+    <!--COMPLETED  (6) Delete this TextView-->
+    
     <!--TODO (7) Add an EditText-->
     <!--TODO (8) Give the EditText an id of @+id/et_search_box-->
     <!--TODO (9) Set the text size to 22sp-->
