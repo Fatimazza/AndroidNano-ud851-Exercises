@@ -79,9 +79,9 @@ public class MainActivity extends AppCompatActivity {
         }
 
         @Override
-        protected void onPostExecute(String s) {
-            if (s != null && !s.equals("")){
-                mSearchResultsTextView.setText(s);
+        protected void onPostExecute(String githubSearchResult) {
+            if (githubSearchResult != null && !githubSearchResult.equals("")){
+                mSearchResultsTextView.setText(githubSearchResult);
             }
         }
     }
