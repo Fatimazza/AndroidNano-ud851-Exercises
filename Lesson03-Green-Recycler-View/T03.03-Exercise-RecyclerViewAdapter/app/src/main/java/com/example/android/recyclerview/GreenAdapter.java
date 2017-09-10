@@ -70,8 +70,6 @@ public class GreenAdapter extends RecyclerView.Adapter<GreenAdapter.NumberViewHo
         return viewHolder;
     }
 
-    // TODO (9) Override getItemCount and return the number of items to display
-    
     // COMPLETED (7) Override onBindViewHolder
     // COMPLETED (8) Within onBindViewHolder, call holder.bind and pass in the position
 
@@ -83,9 +81,11 @@ public class GreenAdapter extends RecyclerView.Adapter<GreenAdapter.NumberViewHo
         holder.bind(position);
     }
 
+    // COMPLETED (9) Override getItemCount and return the number of items to display
+
     @Override
     public int getItemCount() {
-        return 0;
+        return mNumberItems;
     }
 
     /**
