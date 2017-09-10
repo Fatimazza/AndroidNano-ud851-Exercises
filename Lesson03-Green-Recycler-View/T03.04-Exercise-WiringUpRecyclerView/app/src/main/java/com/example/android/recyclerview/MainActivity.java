@@ -17,13 +17,18 @@ package com.example.android.recyclerview;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.RecyclerView;
 
 public class MainActivity extends AppCompatActivity {
 
-    // TODO (1) Create a private static final int called NUM_LIST_ITEMS and set it equal to 100
+    // COMPLETED (1) Create a private static final int called NUM_LIST_ITEMS and set it equal to 100
+    private static final int NUM_LIST_ITEM = 100;
 
-    // TODO (2) Create a GreenAdapter variable called mAdapter
-    // TODO (3) Create a RecyclerView variable called mNumbersList
+    // COMPLETED (2) Create a GreenAdapter variable called mAdapter
+    // COMPLETED (3) Create a RecyclerView variable called mNumbersList
+
+    GreenAdapter mAdapter;
+    RecyclerView mNumbersList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
