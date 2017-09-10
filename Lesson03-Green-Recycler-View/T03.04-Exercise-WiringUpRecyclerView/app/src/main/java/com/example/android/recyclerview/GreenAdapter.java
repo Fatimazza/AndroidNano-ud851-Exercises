@@ -70,6 +70,10 @@ public class GreenAdapter extends RecyclerView.Adapter<GreenAdapter.NumberViewHo
         boolean shouldAttachToParentImmediately = false;
 
         View view = inflater.inflate(layoutIdForListItem, viewGroup, shouldAttachToParentImmediately);
+
+        //Add background color based on the order of which viewHolder instance was created
+        view.setBackgroundColor(ColorUtils.getViewHolderBackgroundColorFromInstance(context, viewGroup.getChildCount()));
+
         NumberViewHolder viewHolder = new NumberViewHolder(view);
 
         return viewHolder;
