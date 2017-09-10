@@ -193,7 +193,8 @@ public class GreenAdapter extends RecyclerView.Adapter<GreenAdapter.NumberViewHo
 
             listItemNumberView = (TextView) itemView.findViewById(R.id.tv_item_number);
             viewHolderIndex = (TextView) itemView.findViewById(R.id.tv_view_holder_instance);
-            // TODO (7) Call setOnClickListener on the View passed into the constructor (use 'this' as the OnClickListener)
+            // COMPLETED (7) Call setOnClickListener on the View passed into the constructor (use 'this' as the OnClickListener)
+            listItemNumberView.setOnClickListener(this);
         }
 
         /**
