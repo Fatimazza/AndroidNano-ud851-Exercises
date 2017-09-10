@@ -17,10 +17,13 @@ package com.example.android.recyclerview;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import static android.content.ContentValues.TAG;
 
 /**
  * We couldn't come up with a good name for this class. Then, we realized
@@ -67,14 +70,17 @@ public class GreenAdapter extends RecyclerView.Adapter<GreenAdapter.NumberViewHo
         return viewHolder;
     }
 
-    // TODO (7) Override onBindViewHolder
-    // TODO (8) Within onBindViewHolder, call holder.bind and pass in the position
-
     // TODO (9) Override getItemCount and return the number of items to display
+    
+    // COMPLETED (7) Override onBindViewHolder
+    // COMPLETED (8) Within onBindViewHolder, call holder.bind and pass in the position
 
     @Override
     public void onBindViewHolder(NumberViewHolder holder, int position) {
-
+        //display data at the specified position
+        
+        Log.d(TAG, "#" + position);
+        holder.bind(position);
     }
 
     @Override
