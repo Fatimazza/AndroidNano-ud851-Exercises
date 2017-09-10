@@ -22,8 +22,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 
-// TODO (8) Implement GreenAdapter.ListItemClickListener from the MainActivity
-public class MainActivity extends AppCompatActivity {
+// COMPLETED (8) Implement GreenAdapter.ListItemClickListener from the MainActivity
+public class MainActivity extends AppCompatActivity implements GreenAdapter.ListItemClickListener {
 
     private static final int NUM_LIST_ITEMS = 100;
 
@@ -101,6 +101,11 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onListItemClick(int clickedItemIndex) {
+
     }
 
     // TODO (10) Override ListItemClickListener's onListItemClick method
