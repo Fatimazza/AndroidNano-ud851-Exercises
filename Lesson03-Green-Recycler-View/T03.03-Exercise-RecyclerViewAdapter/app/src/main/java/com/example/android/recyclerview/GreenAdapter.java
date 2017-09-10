@@ -15,7 +15,9 @@
  */
 package com.example.android.recyclerview;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -45,18 +47,30 @@ public class GreenAdapter extends RecyclerView.Adapter<GreenAdapter.NumberViewHo
     }
 
 
-    // TODO (5) Override the onCreateViewHolder method
-    // TODO (6) Create and return a new NumberViewHolder within this method
+    // COMPLETED (5) Override the onCreateViewHolder method
+    // COMPLETED (6) Create and return a new NumberViewHolder within this method
+
+    @Override
+    public NumberViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        //Param ViewGroup is parent thet ViewHolder are contained within
+        //Param ViewType if RecycleView has > 1 type of item/ different layout used
+
+        Context context = parent.getContext();
+        int layoutIdForListItem = R.layout.number_list_item;
+        boolean shouldAttachToParentImmediately = false;
+
+        LayoutInflater inflater = LayoutInflater.from(context);
+        View view = inflater.inflate(layoutIdForListItem, parent, shouldAttachToParentImmediately);
+        NumberViewHolder viewHolder = new NumberViewHolder(view);
+
+        //return new NumberViewHolder holds view for each list item
+        return viewHolder;
+    }
 
     // TODO (7) Override onBindViewHolder
     // TODO (8) Within onBindViewHolder, call holder.bind and pass in the position
 
     // TODO (9) Override getItemCount and return the number of items to display
-
-    @Override
-    public NumberViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return null;
-    }
 
     @Override
     public void onBindViewHolder(NumberViewHolder holder, int position) {
