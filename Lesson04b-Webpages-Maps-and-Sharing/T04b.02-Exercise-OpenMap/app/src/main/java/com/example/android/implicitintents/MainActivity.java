@@ -117,11 +117,18 @@ public class MainActivity extends AppCompatActivity {
     // Param geolocation is URI representing location that will be opened in map
     private void showMap (Uri geoLocation) {
 
-        // TODO (2) Create an Intent with action type, Intent.ACTION_VIEW
+        // COMPLETED (2) Create an Intent with action type, Intent.ACTION_VIEW
+        // Uri can be put as Intent 2n param, after action as 1st param (Intent.ACTION_VIEW, uri)
+        Intent showMapIntent = new Intent(Intent.ACTION_VIEW);
 
-        // TODO (3) Set the data of the Intent to the Uri passed into this method
+        // COMPLETED (3) Set the data of the Intent to the Uri passed into this method
+        // Uri can also put separatedly, in setData, not as 2nd param
+        showMapIntent.setData(geoLocation);
 
-        // TODO (4) Verify that this Intent can be launched and then call startActivity
+        // COMPLETED (4) Verify that this Intent can be launched and then call startActivity
+        if (showMapIntent.resolveActivity(getPackageManager()) != null){
+            startActivity(showMapIntent);
+        }
     }
 
 }
