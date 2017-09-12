@@ -37,10 +37,11 @@ public class MainActivity extends AppCompatActivity {
      * @param v Button that was clicked.
      */
     public void onClickOpenWebpageButton(View v) {
-        // TODO (5) Create a String that contains a URL ( make sure it starts with http:// or https:// )
+        // COMPLETED (5) Create a String that contains a URL ( make sure it starts with http:// or https:// )
+        String webUrl = "https://classroom.udacity.com";
 
-        // TODO (6) Replace the Toast with a call to openWebPage, passing in the URL String from the previous step
-        Toast.makeText(this, "TODO: Open a web page when this button is clicked", Toast.LENGTH_SHORT).show();
+        // COMPLETED (6) Replace the Toast with a call to openWebPage, passing in the URL String from the previous step
+        openWebPage(webUrl);
     }
 
     /**
