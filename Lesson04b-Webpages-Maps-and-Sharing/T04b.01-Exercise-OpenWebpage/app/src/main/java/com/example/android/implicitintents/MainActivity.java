@@ -15,6 +15,8 @@
  */
 package com.example.android.implicitintents;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -82,11 +84,17 @@ public class MainActivity extends AppCompatActivity {
     // Param should contain url start with Scheme http:// or https://
     private void openWebPage (String url) {
 
-        // TODO (2) Use Uri.parse to parse the String into a Uri
+        // COMPLETED (2) Use Uri.parse to parse the String into a Uri
+        Uri webPage = Uri.parse(url);
 
-        // TODO (3) Create an Intent with Intent.ACTION_VIEW and the webpage Uri as parameters
+        // COMPLETED (3) Create an Intent with Intent.ACTION_VIEW and the webpage Uri as parameters
+        // Action View to view content like webpage url
+        Intent openWebIntent = new Intent(Intent.ACTION_VIEW, webPage);
 
-        // TODO (4) Verify that this Intent can be launched and then call startActivity
-
+        // COMPLETED (4) Verify that this Intent can be launched and then call startActivity
+        // checking before launching Implicit Intent to avoid crash if no Activity to perform the action
+        if (openWebIntent.resolveActivity(getPackageManager()) != null) {
+            startActivity(openWebIntent);
+        }
     }
 }
