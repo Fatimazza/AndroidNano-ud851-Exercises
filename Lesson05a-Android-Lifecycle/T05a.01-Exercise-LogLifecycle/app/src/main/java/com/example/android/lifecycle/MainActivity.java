@@ -61,8 +61,16 @@ public class MainActivity extends AppCompatActivity {
         logAndAppend(ON_START);
     }
 
+    // COMPLETED (3) Override onResume, call super.onResume, and call logAndAppend with ON_RESUME
+    // Called when Activity start interacting with user
+    // Activity is at the top of activity stack, with user input going to it
+    // onResume always followed by onPause
+    @Override
+    protected void onResume() {
+        super.onResume();
+        logAndAppend(ON_RESUME);
+    }
 
-    // TODO (3) Override onResume, call super.onResume, and call logAndAppend with ON_RESUME
 
     // TODO (4) Override onPause, call super.onPause, and call logAndAppend with ON_PAUSE
 
