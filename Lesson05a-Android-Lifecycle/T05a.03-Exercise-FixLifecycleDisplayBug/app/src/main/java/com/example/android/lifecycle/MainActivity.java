@@ -138,8 +138,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
 
-        // TODO (2) Add the ON_STOP String to the front of mLifecycleCallbacks
-
+        // COMPLETED (2) Add the ON_STOP String to the front of mLifecycleCallbacks
+        // Since any updates to the UI we make after onSaveInstanceState (onStop, onDestroy, etc)
+        // we use an ArrayList to track if these lifecycle events had occurred
+        mLifecycleCallbacks.add(0, ON_STOP);
         logAndAppend(ON_STOP);
     }
 
@@ -165,8 +167,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
 
-        // TODO (3) Add the ON_DESTROY String to the front of mLifecycleCallbacks
-
+        // COMPLETED (3) Add the ON_DESTROY String to the front of mLifecycleCallbacks
+        // Since any updates to the UI we make after onSaveInstanceState (onStop, onDestroy, etc)
+        // we use an ArrayList to track if these lifecycle events had occurred
+        mLifecycleCallbacks.add(0, ON_DESTROY);
         logAndAppend(ON_DESTROY);
     }
 
