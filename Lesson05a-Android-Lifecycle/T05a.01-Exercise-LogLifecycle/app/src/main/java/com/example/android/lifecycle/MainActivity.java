@@ -72,7 +72,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    // TODO (4) Override onPause, call super.onPause, and call logAndAppend with ON_PAUSE
+    // COMPLETED (4) Override onPause, call super.onPause, and call logAndAppend with ON_PAUSE
+    // Called when system ABOUT TO start RESUMING a previous activity
+    // Implementation in this method must be very quick, because Activity will not resumed until this method returns
+    // Followed by onResume() if Activity returns back to the front, onStop() if it becomes invisible/hidden
+    @Override
+    protected void onPause() {
+        super.onPause();
+        logAndAppend(ON_PAUSE);
+    }
+
 
     // TODO (5) Override onStop, call super.onStop, and call logAndAppend with ON_STOP
 
