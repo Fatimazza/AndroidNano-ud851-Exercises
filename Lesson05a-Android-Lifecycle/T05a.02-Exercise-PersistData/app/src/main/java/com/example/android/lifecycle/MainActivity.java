@@ -15,7 +15,10 @@ public class MainActivity extends AppCompatActivity {
      */
     private static final String TAG = MainActivity.class.getSimpleName();
 
-    // TODO (1) Create a key String called LIFECYCLE_CALLBACKS_TEXT_KEY
+    // COMPLETED (1) Create a key String called LIFECYCLE_CALLBACKS_TEXT_KEY
+    // Will be used to store the content of TextView
+    // so that ENTIRE set of Callbacks can be SEEN as they're called
+    private static final String LIFECYCLE_CALLBACKS_TEXT_KEY = "callbacks";
 
     /* Constant values for the names of each respective lifecycle callback */
     private static final String ON_CREATE = "onCreate";
