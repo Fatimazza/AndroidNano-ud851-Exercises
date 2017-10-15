@@ -6,6 +6,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     /*
@@ -39,7 +41,10 @@ public class MainActivity extends AppCompatActivity {
      */
     private TextView mLifecycleDisplay;
 
-    // TODO (1) Declare and instantiate a static ArrayList of Strings called mLifecycleCallbacks
+    // COMPLETED (1) Declare and instantiate a static ArrayList of Strings called mLifecycleCallbacks
+    // This array will keep track Lifecycle callback after we're able to save them.
+    // Previously onStop and onDestroy are called but not saved.
+    private static final ArrayList<String> mLifecycleCallbacks = new ArrayList<>();
 
     /**
      * Called when the activity is first created. This is where you should do all of your normal
