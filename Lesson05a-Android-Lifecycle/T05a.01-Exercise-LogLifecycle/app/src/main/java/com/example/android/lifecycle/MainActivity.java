@@ -83,7 +83,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    // TODO (5) Override onStop, call super.onStop, and call logAndAppend with ON_STOP
+    // COMPLETED (5) Override onStop, call super.onStop, and call logAndAppend with ON_STOP
+    // Called when Activity NO LONGER VISIBLE to user
+    // Covered by another Activity (which being brought in front of this one)
+    // Followed by onRestart() if Activity's coming back to interact with user, onDestroy() if Activity is going away
+    @Override
+    protected void onStop() {
+        super.onStop();
+        logAndAppend(ON_STOP);
+    }
+
 
     // TODO (6) Override onRestart, call super.onRestart, and call logAndAppend with ON_RESTART
 
