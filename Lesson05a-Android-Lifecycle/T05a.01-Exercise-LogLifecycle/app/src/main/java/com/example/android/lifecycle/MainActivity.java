@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
         // COMPLETED (1) Use logAndAppend within onCreate
         // Called ONCE, build and wire up UI
+        // Always followed by onStart
         logAndAppend(ON_CREATE);
     }
 
@@ -104,7 +105,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    // TODO (7) Override onDestroy, call super.onDestroy, and call logAndAppend with ON_DESTROY
+    // COMPLETED (7) Override onDestroy, call super.onDestroy, and call logAndAppend with ON_DESTROY
+    // Called ONCE, final call before Activity destroyed
+    // Can happen because of finish() method OR system destroying instance to save space
+    // Those can be checked with the isFinishing() method
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        logAndAppend(ON_DESTROY);
+    }
 
     /**
      * Logs to the console and appends the lifecycle method name to the TextView so that you can
