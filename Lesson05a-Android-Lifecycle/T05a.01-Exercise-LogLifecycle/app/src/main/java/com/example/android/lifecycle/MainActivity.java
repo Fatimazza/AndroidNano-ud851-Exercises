@@ -52,7 +52,15 @@ public class MainActivity extends AppCompatActivity {
         logAndAppend(ON_CREATE);
     }
 
-    // TODO (2) Override onStart, call super.onStart, and call logAndAppend with ON_START
+    // COMPLETED (2) Override onStart, call super.onStart, and call logAndAppend with ON_START
+    // Called when Activity VISIBLE to user
+    // Followed by onResume() if Activity is in foreground, onStop() if it's in background/hidden
+    @Override
+    protected void onStart() {
+        super.onStart();
+        logAndAppend(ON_START);
+    }
+
 
     // TODO (3) Override onResume, call super.onResume, and call logAndAppend with ON_RESUME
 
