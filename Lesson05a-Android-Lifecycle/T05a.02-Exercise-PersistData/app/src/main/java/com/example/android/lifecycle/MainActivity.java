@@ -143,14 +143,19 @@ public class MainActivity extends AppCompatActivity {
     // COMPLETED (2) Override onSaveInstanceState
     @Override
     protected void onSaveInstanceState(Bundle outState) {
+
         super.onSaveInstanceState(outState);
         logAndAppend(ON_SAVE_INSTANCE_STATE);
+
+        //Store the content of TextView to the Bundle
+        String lifecycleDisplayTextViewContents = mLifecycleDisplay.getText().toString();
+        outState.putString(LIFECYCLE_CALLBACKS_TEXT_KEY, lifecycleDisplayTextViewContents);
     }
 
     // Do steps 3 - 5 within onSaveInstanceState
     // COMPLETED (3) Call super.onSaveInstanceState
     // COMPLETED (4) Call logAndAppend with the ON_SAVE_INSTANCE_STATE String
-    // TODO (5) Put the text from the TextView in the outState bundle
+    // COMPLETED (5) Put the text from the TextView in the outState bundle
 
     /**
      * Logs to the console and appends the lifecycle method name to the TextView so that you can
