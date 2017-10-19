@@ -32,9 +32,13 @@ import java.net.URL;
 
 public class MainActivity extends AppCompatActivity {
 
-    // TODO (1) Create a static final key to store the query's URL
+    // COMPLETED (1) Create a static final key to store the query's URL
+    // A Contants to save and restore displayed URL
+    private static final String SEARCH_QUERY_URL_DATA = "query";
 
-    // TODO (2) Create a static final key to store the search's raw JSON
+    // COMPLETED (2) Create a static final key to store the search's raw JSON
+    // A Constant to save and restored displayed JSON
+    private static final String SEARCH_RESULT_RAW_JSON = "results";
 
     private EditText mSearchBoxEditText;
 
