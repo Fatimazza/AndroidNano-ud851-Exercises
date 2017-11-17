@@ -32,7 +32,7 @@ import com.example.android.asynctaskloader.utilities.NetworkUtils;
 import java.io.IOException;
 import java.net.URL;
 
-// TODO (1) implement LoaderManager.LoaderCallbacks<String> on MainActivity
+// COMPLETED (1) implement LoaderManager.LoaderCallbacks<String> on MainActivity
 public class MainActivity extends AppCompatActivity
     implements LoaderManager.LoaderCallbacks<String> {
 
@@ -43,7 +43,9 @@ public class MainActivity extends AppCompatActivity
     /* A constant to save and restore the JSON that is being displayed */
     private static final String SEARCH_RESULTS_RAW_JSON = "results";
 
-    // TODO (2) Create a constant int to uniquely identify your loader. Call it GITHUB_SEARCH_LOADER
+    // COMPLETED (2) Create a constant int to uniquely identify your loader. Call it GITHUB_SEARCH_LOADER
+    // Unique random number to identify Loader
+    private static final int GITHUB_SEARCH_LOADER = 22;
 
     private EditText mSearchBoxEditText;
 
@@ -149,7 +151,7 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-    // TODO (3) Override onCreateLoader
+    // COMPLETED (3) Override onCreateLoader
     // Within onCreateLoader
         // TODO (4) Return a new AsyncTaskLoader<String> as an anonymous inner class with this as the constructor's parameter
             // TODO (5) Override onStartLoading
@@ -172,7 +174,7 @@ public class MainActivity extends AppCompatActivity
                 // TODO (12) Copy the try / catch block from the AsyncTask's doInBackground method
                 // END - loadInBackground
 
-    // TODO (13) Override onLoadFinished
+    // COMPLETED (13) Override onLoadFinished
 
         // Within onLoadFinished
         // TODO (14) Hide the loading indicator
@@ -180,7 +182,7 @@ public class MainActivity extends AppCompatActivity
         // TODO (15) Use the same logic used in onPostExecute to show the data or the error message
         // END - onLoadFinished
 
-    // TODO (16) Override onLoaderReset as it is part of the interface we implement, but don't do anything in this method
+    // COMPLETED (16) Override onLoaderReset as it is part of the interface we implement, but don't do anything in this method
 
     // TODO (29) Delete the AsyncTask class
     public class GithubQueryTask extends AsyncTask<URL, Void, String> {
