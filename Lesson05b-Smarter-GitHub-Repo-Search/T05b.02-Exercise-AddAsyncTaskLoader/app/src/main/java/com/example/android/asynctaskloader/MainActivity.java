@@ -184,6 +184,16 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onLoadFinished(Loader<String> loader, String data) {
 
+        //hide indicator when loading finished
+        mLoadingIndicator.setVisibility(View.INVISIBLE);
+
+        //show the data
+        if (null == data) {
+            showErrorMessage();
+        } else {
+            mSearchResultsTextView.setText(data);
+            showJsonDataView();
+        }
     }
 
     @Override
@@ -217,9 +227,9 @@ public class MainActivity extends AppCompatActivity
     // COMPLETED (13) Override onLoadFinished
 
         // Within onLoadFinished
-        // TODO (14) Hide the loading indicator
+        // COMPLETED (14) Hide the loading indicator
 
-        // TODO (15) Use the same logic used in onPostExecute to show the data or the error message
+        // COMPLETED (15) Use the same logic used in onPostExecute to show the data or the error message
         // END - onLoadFinished
 
     // COMPLETED (16) Override onLoaderReset as it is part of the interface we implement, but don't do anything in this method
