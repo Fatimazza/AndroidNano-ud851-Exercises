@@ -94,13 +94,24 @@ public class MainActivity extends AppCompatActivity
     private void makeGithubSearchQuery() {
         String githubQuery = mSearchBoxEditText.getText().toString();
 
-        // TODO (17) If no search was entered, indicate that there isn't anything to search for and return
+        // COMPLETED (17) If no search was entered, indicate that there isn't anything to search for and return
+        //in order to reduce unnecessary Loader
+        if (TextUtils.isEmpty(githubQuery)){
+            mUrlDisplayTextView.setText("No query entered, nothing to search for.");
+            return;
+        }
+
+        /*
+        If there is text entered in the search box when the search button was clicked, we will
+        create the URL that will return our Github search results, display that URL, and then
+        pass that URL to the Loader. The reason we pass the URL as a String is simply a matter
+        of convenience. There are other ways of achieving this same result, but we felt this was the simplest.
+        */
 
         URL githubSearchUrl = NetworkUtils.buildUrl(githubQuery);
         mUrlDisplayTextView.setText(githubSearchUrl.toString());
 
-        // TODO (18) Remove the call to execute the AsyncTask
-        new GithubQueryTask().execute(githubSearchUrl);
+        // COMPLETED (18) Remove the call to execute the AsyncTask
 
         // TODO (19) Create a bundle called queryBundle
         // TODO (20) Use putString with SEARCH_QUERY_URL_EXTRA as the key and the String value of the URL as the value
