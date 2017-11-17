@@ -138,12 +138,22 @@ public class MainActivity extends AppCompatActivity
     }
 
     @Override
-    public Loader<String> onCreateLoader(int id, Bundle args) {
+    public Loader<String> onCreateLoader(int id, final Bundle args) {
         return new AsyncTaskLoader<String>(this) {
 
             @Override
             protected void onStartLoading() {
-                super.onStartLoading();
+
+                //if no argument were passed, we dont have query to perform, return
+                if (args == null){
+                    return;
+                }
+
+                //begin loading in Background, show the loading indicator
+                mLoadingIndicator.setVisibility(View.VISIBLE);
+
+                //force Async Load
+                forceLoad();
             }
 
             @Override
@@ -169,11 +179,11 @@ public class MainActivity extends AppCompatActivity
             // COMPLETED (5) Override onStartLoading
                 // Within onStartLoading
 
-                // TODO (6) If args is null, return.
+                // COMPLETED (6) If args is null, return.
 
-                // TODO (7) Show the loading indicator
+                // COMPLETED (7) Show the loading indicator
 
-                // TODO (8) Force a load
+                // COMPLETED (8) Force a load
                 // END - onStartLoading
 
             // COMPLETED (9) Override loadInBackground
