@@ -18,6 +18,7 @@ package com.example.android.asynctaskloader;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.LoaderManager;
+import android.support.v4.content.AsyncTaskLoader;
 import android.support.v4.content.Loader;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -138,7 +139,18 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public Loader<String> onCreateLoader(int id, Bundle args) {
-        return null;
+        return new AsyncTaskLoader<String>(this) {
+
+            @Override
+            protected void onStartLoading() {
+                super.onStartLoading();
+            }
+
+            @Override
+            public String loadInBackground() {
+                return null;
+            }
+        };
     }
 
     @Override
@@ -153,8 +165,8 @@ public class MainActivity extends AppCompatActivity
 
     // COMPLETED (3) Override onCreateLoader
     // Within onCreateLoader
-        // TODO (4) Return a new AsyncTaskLoader<String> as an anonymous inner class with this as the constructor's parameter
-            // TODO (5) Override onStartLoading
+        // COMPLETED (4) Return a new AsyncTaskLoader<String> as an anonymous inner class with this as the constructor's parameter
+            // COMPLETED (5) Override onStartLoading
                 // Within onStartLoading
 
                 // TODO (6) If args is null, return.
@@ -164,7 +176,7 @@ public class MainActivity extends AppCompatActivity
                 // TODO (8) Force a load
                 // END - onStartLoading
 
-            // TODO (9) Override loadInBackground
+            // COMPLETED (9) Override loadInBackground
 
                 // Within loadInBackground
                 // TODO (10) Get the String for our URL from the bundle passed to onCreateLoader
