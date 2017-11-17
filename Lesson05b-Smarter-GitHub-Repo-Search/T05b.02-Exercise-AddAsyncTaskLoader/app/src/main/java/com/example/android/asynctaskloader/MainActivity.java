@@ -21,6 +21,7 @@ import android.support.v4.app.LoaderManager;
 import android.support.v4.content.AsyncTaskLoader;
 import android.support.v4.content.Loader;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -158,7 +159,24 @@ public class MainActivity extends AppCompatActivity
 
             @Override
             public String loadInBackground() {
-                return null;
+
+                //get Search Query from bundle
+                String searchQueryUrlString = args.getString(SEARCH_QUERY_URL_EXTRA);
+
+                //if the URL is null or empty, return
+                if (searchQueryUrlString==null || TextUtils.isEmpty(SEARCH_QUERY_URL_EXTRA)) {
+                    return null;
+                }
+
+                //parse URL from the passed in String, perform the search
+                try {
+                    URL githubUrl = new URL(searchQueryUrlString);
+                    String githubSearchResults = NetworkUtils.getResponseFromHttpUrl(githubUrl);
+                    return githubSearchResults;
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    return null;
+                }
             }
         };
     }
@@ -189,11 +207,11 @@ public class MainActivity extends AppCompatActivity
             // COMPLETED (9) Override loadInBackground
 
                 // Within loadInBackground
-                // TODO (10) Get the String for our URL from the bundle passed to onCreateLoader
+                // COMPLETED (10) Get the String for our URL from the bundle passed to onCreateLoader
 
-                // TODO (11) If the URL is null or empty, return null
+                // COMPLETED (11) If the URL is null or empty, return null
 
-                // TODO (12) Copy the try / catch block from the AsyncTask's doInBackground method
+                // COMPLETED (12) Copy the try / catch block from the AsyncTask's doInBackground method
                 // END - loadInBackground
 
     // COMPLETED (13) Override onLoadFinished
