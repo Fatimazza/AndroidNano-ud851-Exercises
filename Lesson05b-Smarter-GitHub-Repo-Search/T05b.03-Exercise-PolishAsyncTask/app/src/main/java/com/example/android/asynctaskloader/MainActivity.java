@@ -165,7 +165,9 @@ public class MainActivity extends AppCompatActivity implements
     public Loader<String> onCreateLoader(int id, final Bundle args) {
         return new AsyncTaskLoader<String>(this) {
 
-            // TODO (1) Create a String member variable called mGithubJson that will store the raw JSON
+            // COMPLETED (1) Create a String member variable called mGithubJson that will store the raw JSON
+            /* This String will contain the raw JSON from the results of our Github search */
+            String mGithubJson;
 
             @Override
             protected void onStartLoading() {
