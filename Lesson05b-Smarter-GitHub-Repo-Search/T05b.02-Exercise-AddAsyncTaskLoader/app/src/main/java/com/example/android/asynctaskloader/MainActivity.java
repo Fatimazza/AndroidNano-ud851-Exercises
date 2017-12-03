@@ -146,7 +146,7 @@ public class MainActivity extends AppCompatActivity
         Loader<String> githubSearchLoader = loaderManager.getLoader(GITHUB_SEARCH_LOADER);
 
         // COMPLETED (23) If the Loader was null, initialize it. Else, restart it.
-        if (null == loaderManager) {
+        if (null == githubSearchLoader) {
             loaderManager.initLoader(GITHUB_SEARCH_LOADER, queryBundle, this);
         } else {
             loaderManager.restartLoader(GITHUB_SEARCH_LOADER, queryBundle, this);
