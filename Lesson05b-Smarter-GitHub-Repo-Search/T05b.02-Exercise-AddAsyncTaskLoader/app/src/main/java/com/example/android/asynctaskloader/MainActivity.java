@@ -83,7 +83,8 @@ public class MainActivity extends AppCompatActivity
             mSearchResultsTextView.setText(rawJsonSearchResults);
         }
 
-        // TODO (24) Initialize the loader with GITHUB_SEARCH_LOADER as the ID, null for the bundle, and this for the context
+        // COMPLETED (24) Initialize the loader with GITHUB_SEARCH_LOADER as the ID, null for the bundle, and this for the context
+        getSupportLoaderManager().initLoader(GITHUB_SEARCH_LOADER, null, this);
     }
 
     /**
@@ -118,9 +119,40 @@ public class MainActivity extends AppCompatActivity
         Bundle queryBundle = new Bundle();
         queryBundle.putString(SEARCH_QUERY_URL_EXTRA, githubSearchUrl.toString());
 
-        // TODO (21) Call getSupportLoaderManager and store it in a LoaderManager variable
-        // TODO (22) Get our Loader by calling getLoader and passing the ID we specified
-        // TODO (23) If the Loader was null, initialize it. Else, restart it.
+        /*
+         * Bundle that will be passed to Loader, is created
+         * Decide to
+         * 1. restart the loader (if the loader already existed), or
+         * 2. initialize the loader (if the loader did NOT already exist)
+         *
+         * Doing this by:
+         * 1. store the support loader manager in the variable loaderManager
+         * All things related to the Loader go through the LoaderManager.
+         *
+         * Once we have a hold on the support loader manager, (loaderManager)
+         * 2. we can attempt to access our githubSearchLoader.
+         * To do this,
+         * 2 a. we use LoaderManager's method, "getLoader",
+         * 2 b. and pass in the ID we assigned in its creation.
+         * This process similar to finding a View by ID.
+         *
+         * 3. We give the LoaderManager an ID and it returns a loader (if one exists).
+         * If one doesn't exist, we tell the LoaderManager to create one.
+         * If one does exist, we tell the LoaderManager to restart it.
+         */
+
+        // COMPLETED (21) Call getSupportLoaderManager and store it in a LoaderManager variable
+        // COMPLETED (22) Get our Loader by calling getLoader and passing the ID we specified
+
+        LoaderManager loaderManager = getSupportLoaderManager();
+        Loader<String> githubSearchLoader = loaderManager.getLoader(GITHUB_SEARCH_LOADER);
+
+        // COMPLETED (23) If the Loader was null, initialize it. Else, restart it.
+        if (null == loaderManager) {
+            loaderManager.initLoader(GITHUB_SEARCH_LOADER, queryBundle, this);
+        } else {
+            loaderManager.restartLoader(GITHUB_SEARCH_LOADER, queryBundle, this);
+        }
     }
 
     /**
