@@ -48,10 +48,10 @@ public class SettingsActivity extends AppCompatActivity {
 
     // COMPLETED (2) Create a class called SettingsFragment that extends PreferenceFragmentCompat
     // COMPLETED (3) In res->xml create a file called pref_visualizer
-    // TODO (4) In pref_visualizer create a preference screen containing a single check box preference
+    // COMPLETED (4) In pref_visualizer create a preference screen containing a single check box preference
 
 
-    // TODO (5) In SettingsFragment's onCreatePreferences method add the preference file using the
+    // COMPLETED (5) In SettingsFragment's onCreatePreferences method add the preference file using the
     // addPreferencesFromResource method
 
 
