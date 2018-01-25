@@ -1,0 +1,6 @@
+<resources>
+
+    <!-- Value for default Checkbox -->
+    <bool name="pref_show_bass_default">true</bool>
+
+</resources>
