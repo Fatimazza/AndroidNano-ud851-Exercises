@@ -13,16 +13,16 @@
 
     <CheckBoxPreference
         android:defaultValue="false"
+        android:key="show_mid_range"
+        android:summaryOff="Hidden"
+        android:summaryOn="Shown"
+        android:title="Show Mid Range" />
+
+    <CheckBoxPreference
+        android:defaultValue="false"
         android:key="show_treble"
         android:summaryOff="Hidden"
         android:summaryOn="Shown"
         android:title="Show Treble" />
-
-    <CheckBoxPreference
-        android:defaultValue="false"
-        android:key="show_mid_range"
-        android:summaryOff="Hideen"
-        android:summaryOn="Shown"
-        android:title="Show Mid Range" />
 
 </PreferenceScreen>
