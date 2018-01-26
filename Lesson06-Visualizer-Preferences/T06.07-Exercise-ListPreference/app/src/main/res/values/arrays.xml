@@ -1,0 +1,21 @@
+<resources>
+
+    <!-- Label ordering must match values -->
+
+    <!-- Array for color label -->
+
+    <array name="pref_color_option_labels">
+        <item>@string/pref_color_label_red</item>
+        <item>@string/pref_color_label_blue</item>
+        <item>@string/pref_color_label_green</item>
+    </array>
+
+    <!-- Array for color values -->
+
+    <array name="pref_color_option_values">
+        <item>@string/pref_color_red_value</item>
+        <item>@string/pref_color_blue_value</item>
+        <item>@string/pref_color_green_value</item>
+    </array>
+
+</resources>
