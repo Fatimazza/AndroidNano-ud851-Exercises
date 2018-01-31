@@ -51,6 +51,19 @@ public class SettingsFragment extends PreferenceFragmentCompat implements OnShar
 
     }
 
+    //Helper method to set the correct Preference Summary
+    private void setPreferenceSummary (Preference preference, String value) {
+        if (preference instanceof ListPreference) {
+            ListPreference listPreference = (ListPreference) preference;
+
+            int prefIndex = listPreference.findIndexOfValue(value);
+            if (prefIndex >= 0) {
+                //getting the Label which is associated with the Value
+                listPreference.setSummary(listPreference.getEntries()[prefIndex]);
+            }
+        }
+    }
+
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
 
