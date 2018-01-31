@@ -42,6 +42,13 @@ public class SettingsFragment extends PreferenceFragmentCompat implements OnShar
 
         SharedPreferences sharedPreferences = getPreferenceScreen().getSharedPreferences();
 
+        //Get the number of Preferences
+        PreferenceScreen prefScreen = getPreferenceScreen();
+        int count = prefScreen.getPreferenceCount();
+        for (int i = 0; i < count; i++) {
+            Preference p = prefScreen.getPreference(i);
+        }
+
     }
 
     @Override
