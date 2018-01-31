@@ -39,6 +39,9 @@ public class SettingsFragment extends PreferenceFragmentCompat implements OnShar
         // TODO (3) Get the preference screen, get the number of preferences and iterate through
         // all of the preferences if it is not a checkbox preference, call the setSummary method
         // passing in a preference and the value of the preference
+
+        SharedPreferences sharedPreferences = getPreferenceScreen().getSharedPreferences();
+
     }
 
     @Override
