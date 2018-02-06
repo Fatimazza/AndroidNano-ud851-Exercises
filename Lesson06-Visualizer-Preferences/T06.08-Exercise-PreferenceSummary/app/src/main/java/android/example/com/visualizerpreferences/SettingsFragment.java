@@ -36,7 +36,7 @@ public class SettingsFragment extends PreferenceFragmentCompat implements OnShar
         // Add visualizer preferences, defined in the XML file in res->xml->pref_visualizer
         addPreferencesFromResource(R.xml.pref_visualizer);
 
-        // TODO (3) Get the preference screen, get the number of preferences and iterate through
+        // COMPLETED (3) Get the preference screen, get the number of preferences and iterate through
         // all of the preferences if it is not a checkbox preference, call the setSummary method
         // passing in a preference and the value of the preference
 
@@ -45,9 +45,13 @@ public class SettingsFragment extends PreferenceFragmentCompat implements OnShar
         //Get the number of Preferences
         PreferenceScreen prefScreen = getPreferenceScreen();
         int count = prefScreen.getPreferenceCount();
+
+        // Go through all of the preferences, and set up their preference summary.
         for (int i = 0; i < count; i++) {
             Preference p = prefScreen.getPreference(i);
 
+            // You don't need to set up preference summaries for checkbox preferences because
+            // they are already set up in xml using summaryOff and summary On
             if (!(p instanceof CheckBoxPreference)) {
                 String value = sharedPreferences.getString(p.getKey(), "");
                 setPreferenceSummary(p, value);
