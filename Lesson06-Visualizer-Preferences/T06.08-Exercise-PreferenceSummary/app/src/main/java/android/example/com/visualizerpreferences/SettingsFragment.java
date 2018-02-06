@@ -101,9 +101,20 @@ public class SettingsFragment extends PreferenceFragmentCompat implements OnShar
         }
     }
 
-    // TODO (5) Register and unregister the OnSharedPreferenceChange listener (this class) in
+    // COMPLETED (5) Register and unregister the OnSharedPreferenceChange listener (this class) in
     // onCreate and onDestroy respectively.
 
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        getPreferenceScreen().getSharedPreferences()
+            .registerOnSharedPreferenceChangeListener(this);
+    }
 
-
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        getPreferenceScreen().getSharedPreferences()
+            .unregisterOnSharedPreferenceChangeListener(this);
+    }
 }
