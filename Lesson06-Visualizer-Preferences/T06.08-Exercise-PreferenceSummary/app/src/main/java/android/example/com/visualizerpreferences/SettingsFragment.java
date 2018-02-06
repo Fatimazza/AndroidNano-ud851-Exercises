@@ -85,13 +85,21 @@ public class SettingsFragment extends PreferenceFragmentCompat implements OnShar
         }
     }
 
+    // COMPLETED (4) Override onSharedPreferenceChanged and, if it is not a checkbox preference,
+    // call setPreferenceSummary on the changed preference
+
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-
+        // Figure out which preference was changed
+        Preference preference =  findPreference(key);
+        if (null != preference) {
+            // Updates the summary for the preference
+            if (!(preference instanceof CheckBoxPreference)){
+                String value = sharedPreferences.getString(preference.getKey(), "");
+                setPreferenceSummary(preference, value);
+            }
+        }
     }
-
-    // TODO (4) Override onSharedPreferenceChanged and, if it is not a checkbox preference,
-    // call setPreferenceSummary on the changed preference
 
     // TODO (5) Register and unregister the OnSharedPreferenceChange listener (this class) in
     // onCreate and onDestroy respectively.
