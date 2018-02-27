@@ -1,5 +1,7 @@
 package com.example.android.waitlist;
 
+import com.example.android.waitlist.data.WaitlistDbHelper;
+
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -31,9 +33,15 @@ public class MainActivity extends AppCompatActivity {
         // Create an adapter for that cursor to display the data
         mAdapter = new GuestListAdapter(this);
 
-        // TODO (2) Create a WaitlistDbHelper instance, pass "this" to the constructor as context
+        // COMPLETED (2) Create a WaitlistDbHelper instance, pass "this" to the constructor as context
+        // Create a DB helper (this will create the DB if run for the first time)
+        WaitlistDbHelper waitlistDbHelper = new WaitlistDbHelper(this);
 
-        // TODO (3) Get a writable database reference using getWritableDatabase and store it in mDb
+        // COMPLETED (3) Get a writable database reference using getWritableDatabase and store it in mDb
+        // Keep a reference to the mDb until paused or killed.
+        // Get a writable database because we will be adding restaurant customers
+        // Can be Readable or Writable
+        waitlistDbHelper.getWritableDatabase();
 
         // TODO (4) call insertFakeData from TestUtil and pass the database reference mDb
 
