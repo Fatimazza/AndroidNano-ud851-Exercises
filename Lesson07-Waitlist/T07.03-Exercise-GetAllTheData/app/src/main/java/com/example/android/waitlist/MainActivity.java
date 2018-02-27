@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         // Keep a reference to the mDb until paused or killed.
         // Get a writable database because we will be adding restaurant customers
         // Can be Readable or Writable
-        waitlistDbHelper.getWritableDatabase();
+        mDb = waitlistDbHelper.getWritableDatabase();
 
         // COMPLETED (4) call insertFakeData from TestUtil and pass the database reference mDb
         // Fill the database with fake data
