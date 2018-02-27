@@ -50,7 +50,8 @@ public class MainActivity extends AppCompatActivity {
         // Fill the database with fake data
         TestUtil.insertFakeData(mDb);
 
-        // TODO (7) Run the getAllGuests function and store the result in a Cursor variable
+        // COMPLETED (7) Run the getAllGuests function and store the result in a Cursor variable
+        Cursor allGuestCursor = getAllGuest();
 
         // TODO (12) Pass the resulting cursor count to the adapter
 
