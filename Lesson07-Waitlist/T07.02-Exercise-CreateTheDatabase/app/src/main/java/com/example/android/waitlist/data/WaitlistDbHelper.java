@@ -12,7 +12,10 @@ public class WaitlistDbHelper extends SQLiteOpenHelper {
 
     // COMPLETED (3) Create a static final int called DATABASE_VERSION and set it to 1
 
+    // The database name
     private static final String DATABASE_NAME = "waitlist.db";
+
+    // If you change the database schema, you must increment the database version
     private static final int DATABASE_VERSION = 1;
 
     // COMPLETED (4) Create a Constructor that takes a context and calls the parent constructor
