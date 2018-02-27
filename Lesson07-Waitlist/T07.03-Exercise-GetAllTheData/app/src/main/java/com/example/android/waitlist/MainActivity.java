@@ -1,8 +1,10 @@
 package com.example.android.waitlist;
 
 import com.example.android.waitlist.data.TestUtil;
+import com.example.android.waitlist.data.WaitlistContract;
 import com.example.android.waitlist.data.WaitlistDbHelper;
 
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -66,8 +68,28 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    // TODO (5) Create a private method called getAllGuests that returns a cursor
+    // COMPLETED (5) Create a private method called getAllGuests that returns a cursor
 
-    // TODO (6) Inside, call query on mDb passing in the table name and projection String [] order by COLUMN_TIMESTAMP
+    /**
+     * * Query the mDb and get all guests from the waitlist table
+     * *
+     * * @return Cursor containing the list of guests
+     * */
+
+    private Cursor getAllGuest() {
+
+        // COMPLETED (6) Inside, call query on mDb passing in the table name and projection String [] order by COLUMN_TIMESTAMP
+        return mDb.query(
+            WaitlistContract.WaitlistEntry.TABLE_NAME, //table
+            null, //column array projector
+            null, //selection
+            null, //selection args array
+            null, //group by
+            null, //having
+            WaitlistContract.WaitlistEntry.COLUMN_TIMESTAMP //orderby
+        );
+
+    }
+
 
 }
