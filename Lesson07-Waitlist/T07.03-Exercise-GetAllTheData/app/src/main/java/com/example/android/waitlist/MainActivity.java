@@ -1,5 +1,6 @@
 package com.example.android.waitlist;
 
+import com.example.android.waitlist.data.TestUtil;
 import com.example.android.waitlist.data.WaitlistDbHelper;
 
 import android.database.sqlite.SQLiteDatabase;
@@ -43,7 +44,9 @@ public class MainActivity extends AppCompatActivity {
         // Can be Readable or Writable
         waitlistDbHelper.getWritableDatabase();
 
-        // TODO (4) call insertFakeData from TestUtil and pass the database reference mDb
+        // COMPLETED (4) call insertFakeData from TestUtil and pass the database reference mDb
+        // Fill the database with fake data
+        TestUtil.insertFakeData(mDb);
 
         // TODO (7) Run the getAllGuests function and store the result in a Cursor variable
 
