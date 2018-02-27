@@ -47,13 +47,19 @@ public class GuestListAdapter extends RecyclerView.Adapter<GuestListAdapter.Gues
             return; // bail (jaminan) if returned null
         }
 
-        // TODO (6) Call getString on the cursor to get the guest's name
+        // COMPLETED (6) Call getString on the cursor to get the guest's name
+        String name = mCursor.getString(mCursor.getColumnIndex(WaitlistContract.WaitlistEntry.COLUMN_GUEST_NAME));
 
-        // TODO (7) Call getInt on the cursor to get the party size
+        // COMPLETED (7) Call getInt on the cursor to get the party size
+        String partySize = mCursor.getString(mCursor.getColumnIndex(WaitlistContract.WaitlistEntry.COLUMN_PARTY_SIZE));
 
-        // TODO (8) Set the holder's nameTextView text to the guest's name
+        // COMPLETED (8) Set the holder's nameTextView text to the guest's name
+        // Display the guest name
+        holder.nameTextView.setText(name);
 
-        // TODO (9) Set the holder's partySizeTextView text to the party size
+        // COMPLETED (9) Set the holder's partySizeTextView text to the party size
+        // Display the party count
+        holder.partySizeTextView.setText(partySize);
     }
 
     @Override
