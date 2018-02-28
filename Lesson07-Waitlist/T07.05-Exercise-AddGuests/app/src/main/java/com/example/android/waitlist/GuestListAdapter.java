@@ -64,7 +64,7 @@ public class GuestListAdapter extends RecyclerView.Adapter<GuestListAdapter.Gues
      *
      * @param newCursor the new cursor that will replace the existing one
      */
-    private void swapCursor(Cursor newCursor) {
+    public void swapCursor(Cursor newCursor) {
 
         // COMPLETED (16) Inside, check if the current cursor is not null, and close it if so
         // Always close the previous mCursor first

@@ -96,12 +96,18 @@ public class MainActivity extends AppCompatActivity {
         }
 
         // COMPLETED (14) call addNewGuest with the guest name and party size
+        // Add guest info to mDb
         addGuest(guestName, partySize);
 
-        // TODO (19) call mAdapter.swapCursor to update the cursor by passing in getAllGuests()
+        // COMPLETED (19) call mAdapter.swapCursor to update the cursor by passing in getAllGuests()
+        // Update the cursor in the adapter to trigger UI to display the new list
+        mAdapter.swapCursor(getAllGuests());
 
-        // TODO (20) To make the UI look nice, call .getText().clear() on both EditTexts, also call clearFocus() on mNewPartySizeEditText
-
+        // COMPLETED (20) To make the UI look nice, call .getText().clear() on both EditTexts, also call clearFocus() on mNewPartySizeEditText
+        //clear UI text fields
+        mNewGuestNameEditText.getText().clear();
+        mNewPartySizeEditText.getText().clear();
+        mNewPartySizeEditText.clearFocus();
     }
 
 
