@@ -119,15 +119,17 @@ public class MainActivity extends AppCompatActivity {
 
     private long addGuest(String name, int partySize) {
 
-        // TODO (5) Inside, create a ContentValues instance to pass the values onto the insert query
+        // COMPLETED (5) Inside, create a ContentValues instance to pass the values onto the insert query
+        ContentValues cv = new ContentValues();
 
-        // TODO (6) call put to insert the name value with the key COLUMN_GUEST_NAME
+        // COMPLETED (6) call put to insert the name value with the key COLUMN_GUEST_NAME
+        cv.put(WaitlistContract.WaitlistEntry.COLUMN_GUEST_NAME, name);
 
-        // TODO (7) call put to insert the party size value with the key COLUMN_PARTY_SIZE
+        // COMPLETED (7) call put to insert the party size value with the key COLUMN_PARTY_SIZE
+        cv.put(WaitlistContract.WaitlistEntry.COLUMN_PARTY_SIZE, partySize);
 
-        // TODO (8) call insert to run an insert query on TABLE_NAME with the ContentValues created
-
-        return 0;
+        // COMPLETED (8) call insert to run an insert query on TABLE_NAME with the ContentValues created
+        return mDb.insert(WaitlistContract.WaitlistEntry.TABLE_NAME, null, cv);
 
     }
 
