@@ -60,12 +60,7 @@ public class MainActivity extends AppCompatActivity {
         //COMPLETED (3) Create a new ItemTouchHelper with a SimpleCallback that handles both LEFT and RIGHT swipe directions
         // Create an item touch helper to handle swiping items off the list
 
-        new ItemTouchHelper(new ItemTouchHelper.Callback() {
-            @Override
-            public int getMovementFlags(RecyclerView recyclerView,
-                RecyclerView.ViewHolder viewHolder) {
-                return 0;
-            }
+        new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
 
             @Override
             public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder,
