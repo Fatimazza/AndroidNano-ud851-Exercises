@@ -25,7 +25,8 @@ public class MainActivity extends AppCompatActivity {
     private EditText mNewGuestNameEditText;
     private EditText mNewPartySizeEditText;
 
-    // TODO (13) Create a constant string LOG_TAG that is equal to the class.getSimpleName()
+    // COMPLETED (13) Create a constant string LOG_TAG that is equal to the class.getSimpleName()
+    private final static String LOG_TAG = MainActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,11 +78,20 @@ public class MainActivity extends AppCompatActivity {
                 || mNewPartySizeEditText.getText().length() == 0)
             return;
 
-        // TODO (10) Create an integer to store the party size and initialize to 1
+        // COMPLETED (10) Create an integer to store the party size and initialize to 1
+        // default party size to 1
+        int partySize = 1;
 
-        // TODO (11) Use Integer.parseInt to parse mNewPartySizeEditText.getText to an integer
+        // COMPLETED (12) Make sure you surround the Integer.parseInt with a try catch and log any exception
+        try {
 
-        // TODO (12) Make sure you surround the Integer.parseInt with a try catch and log any exception
+            // COMPLETED (11) Use Integer.parseInt to parse mNewPartySizeEditText.getText to an integer
+            //mNewPartyCountEditText inputType="number", so this should always work
+            partySize = Integer.parseInt(mNewPartySizeEditText.getText().toString());
+
+        } catch (NumberFormatException ex) {
+            Log.e(LOG_TAG, "Failed to parse party size text to number: " + ex.getMessage());
+        }
 
         // TODO (14) call addNewGuest with the guest name and party size
 
