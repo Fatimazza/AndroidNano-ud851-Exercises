@@ -86,10 +86,9 @@ public class MainActivity extends AppCompatActivity {
                 // update the list
                 mAdapter.swapCursor(getAllGuests());
             }
-        });
 
-
-        //TODO (11) attach the ItemTouchHelper to the waitlistRecyclerView
+            //COMPLETED (11) attach the ItemTouchHelper to the waitlistRecyclerView
+        }).attachToRecyclerView(waitlistRecyclerView);
 
     }
 
