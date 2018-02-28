@@ -136,9 +136,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    // TODO (1) Create a new function called removeGuest that takes long id as input and returns a boolean
+    // COMPLETED (1) Create a new function called removeGuest that takes long id as input and returns a boolean
+    /**
+     * Removes the record with the specified id
+     *
+     * @param id the DB id to be removed
+     * @return True: if removed successfully, False: if failed
+     */
+    private boolean removeGuest(long id) {
 
-    // TODO (2) Inside, call mDb.delete to pass in the TABLE_NAME and the condition that WaitlistEntry._ID equals id
+        // TODO (2) Inside, call mDb.delete to pass in the TABLE_NAME and the condition that WaitlistEntry._ID equals id
+        return true;
+    }
 
 
 }
