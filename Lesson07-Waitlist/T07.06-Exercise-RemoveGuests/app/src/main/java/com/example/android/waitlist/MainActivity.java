@@ -62,21 +62,20 @@ public class MainActivity extends AppCompatActivity {
 
         new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
 
+            // COMPLETED (4) Override onMove and simply return false inside
             @Override
             public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder,
                 RecyclerView.ViewHolder target) {
+                // do nothing, we only care about swiping
                 return false;
             }
 
+            // COMPLETED (5) Override onSwiped
             @Override
             public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
 
             }
         });
-
-        // TODO (4) Override onMove and simply return false inside
-
-        // TODO (5) Override onSwiped
 
         // TODO (8) Inside, get the viewHolder's itemView's tag and store in a long variable id
         // TODO (9) call removeGuest and pass through that id
