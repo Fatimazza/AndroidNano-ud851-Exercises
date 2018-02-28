@@ -107,16 +107,28 @@ public class MainActivity extends AppCompatActivity {
         );
     }
 
-    // TODO (4) Create a new addGuest method
+    // COMPLETED (4) Create a new addGuest method
 
-    // TODO (5) Inside, create a ContentValues instance to pass the values onto the insert query
+    /**
+     * Adds a new guest to the mDb including the party count and the current timestamp
+     *
+     * @param name  Guest's name
+     * @param partySize Number in party
+     * @return id of new record added
+     */
 
-    // TODO (6) call put to insert the name value with the key COLUMN_GUEST_NAME
+    private long addGuest(String name, int partySize) {
 
-    // TODO (7) call put to insert the party size value with the key COLUMN_PARTY_SIZE
+        // TODO (5) Inside, create a ContentValues instance to pass the values onto the insert query
 
-    // TODO (8) call insert to run an insert query on TABLE_NAME with the ContentValues created
+        // TODO (6) call put to insert the name value with the key COLUMN_GUEST_NAME
 
+        // TODO (7) call put to insert the party size value with the key COLUMN_PARTY_SIZE
 
+        // TODO (8) call insert to run an insert query on TABLE_NAME with the ContentValues created
+
+        return 0;
+
+    }
 
 }
