@@ -146,7 +146,8 @@ public class MainActivity extends AppCompatActivity {
     private boolean removeGuest(long id) {
 
         // TODO (2) Inside, call mDb.delete to pass in the TABLE_NAME and the condition that WaitlistEntry._ID equals id
-        return true;
+        return mDb.delete(WaitlistContract.WaitlistEntry.TABLE_NAME,
+            WaitlistContract.WaitlistEntry._ID +"=" +id,null);
     }
 
 
