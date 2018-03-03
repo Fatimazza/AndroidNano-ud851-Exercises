@@ -113,8 +113,11 @@ public class TaskContentProvider extends ContentProvider {
                 throw new UnsupportedOperationException("Not yet implemented");
         }
 
-        // TODO (5) Notify the resolver if the uri has been changed, and return the newly inserted URI
+        // COMPLETED (5) Notify the resolver if the uri has been changed, and return the newly inserted URI
+        getContext().getContentResolver().notifyChange(uri, null);
 
+        // Return constructed uri (this points to the newly inserted row of data)
+        return returnUri;
     }
 
 
