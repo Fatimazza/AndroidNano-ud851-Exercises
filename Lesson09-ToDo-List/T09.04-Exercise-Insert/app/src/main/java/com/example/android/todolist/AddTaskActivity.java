@@ -25,6 +25,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.Toast;
 
 
 public class AddTaskActivity extends AppCompatActivity {
@@ -69,9 +70,14 @@ public class AddTaskActivity extends AppCompatActivity {
         // Insert the content values via a ContentResolver
         Uri uri = getContentResolver().insert(TaskContract.TaskEntry.CONTENT_URI, contentValues);
 
-        // TODO (8) Display the URI that's returned with a Toast
+        // COMPLETED (8) Display the URI that's returned with a Toast
         // [Hint] Don't forget to call finish() to return to MainActivity after this insert is complete
+        if (uri != null) {
+            Toast.makeText(getBaseContext(), uri.toString(), Toast.LENGTH_LONG).show();
+        }
 
+        // Finish activity (this returns back to MainActivity)
+        finish();
     }
 
 
